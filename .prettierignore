@@ -1,0 +1,5 @@
+/node_modules
+.prettierrc
+.prettierignore
+tailwind.config.ts
+.github

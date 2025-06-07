@@ -1,0 +1,43 @@
+{
+    "name": "pretext",
+    "version": "1.0.0",
+    "description": "",
+    "type": "module",
+    "engines": {
+        "node": ">=20"
+    },
+    "scripts": {
+        "check:firefox": "BROWSER=firefox tsx scripts/validate-manifest.ts",
+        "check:chrome": "BROWSER=chrome tsx scripts/validate-manifest.ts",
+        "build:firefox": "BROWSER=firefox tsx scripts/build.ts && yarn check:firefox",
+        "build:chrome": "BROWSER=chrome tsx scripts/build.ts && yarn check:chrome",
+        "build": "yarn build:firefox && yarn build:chrome",
+        "lint": "tsc && eslint && yarn prettier . --check",
+        "fix": "yarn prettier . --write",
+        "test": "vitest"
+    },
+    "devDependencies": {
+        "@eslint/js": "^9.17.0",
+        "@types/chrome": "^0.0.245",
+        "@types/node": "^20.11.21",
+        "@types/react": "^18.2.62",
+        "@types/react-dom": "^18.2.18",
+        "@types/webextension-polyfill": "^0.12.3",
+        "@vitejs/plugin-react": "^4.2.1",
+        "autoprefixer": "^10.4.14",
+        "eslint": "^9.17.0",
+        "globals": "^15.13.0",
+        "prettier": "3.4.2",
+        "tailwindcss": "^3.4.17",
+        "tsx": "^4.19.4",
+        "typescript": "^5.4.5",
+        "typescript-eslint": "^8.32.1",
+        "vite": "^5.2.10",
+        "vitest": "^3.1.4",
+        "webextension-polyfill": "^0.12.0"
+    },
+    "dependencies": {
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0"
+    }
+}
