@@ -2,7 +2,14 @@ import fs from 'fs';
 import path from 'path';
 import { JSONObject, jsonParse, JSONValue } from '../src/utils/json';
 
-const EXPECTED_FILE_EXTENSIONS = ['.js', '.css', '.html', '.json', '.wasm'];
+const EXPECTED_FILE_EXTENSIONS = [
+    '.js',
+    '.css',
+    '.html',
+    '.json',
+    '.wasm',
+    '.png',
+];
 
 function looksLikeFilePath(value: string): boolean {
     return (
