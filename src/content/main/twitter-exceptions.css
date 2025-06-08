@@ -8,7 +8,8 @@ div:has(+ img) {
     transition: var(--exact-filter-transition);
 }
 
-div:has(+ img:hover), div:has(+ img:focus) {
+div:has(+ img:hover),
+div:has(+ img:focus) {
     filter: var(--exact-filter-gray-inactive);
 }
 
