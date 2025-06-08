@@ -13,6 +13,11 @@ div:has(+ div + div:hover) > div > img {
     filter: var(--exact-filter-gray-inactive);
 }
 
+/* Profile grid post thumbnails e.g. https://www.instagram.com/atropey/ */
+div:has(+ div:hover) > img {
+    filter: var(--exact-filter-gray-inactive);
+}
+
 /*
 Story thumbnails when you hover over the middle part.
 There's an extra div that eats the :hover when that happens
