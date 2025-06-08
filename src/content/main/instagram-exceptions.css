@@ -1,20 +1,22 @@
 article:hover img,
-article:hover video {
+article:focus img,
+article:hover video,
+article:focus video {
     filter: var(--exact-filter-gray-inactive);
 }
 
 /* Videos in stories */
-video:has(~ div[data-instancekey]:hover) {
+video:has(~ div[data-instancekey]:hover, ~ div[data-instancekey]:focus) {
     filter: var(--exact-filter-gray-inactive);
 }
 
 /* Story thumbnails in DM */
-div:has(+ div + div:hover) > div > img {
+div:has(+ div + div:hover, + div + div:focus) > div > img {
     filter: var(--exact-filter-gray-inactive);
 }
 
 /* Profile grid post thumbnails e.g. https://www.instagram.com/atropey/ */
-div:has(+ div:hover) > img {
+div:has(+ div:hover, + div:focus) > img {
     filter: var(--exact-filter-gray-inactive);
 }
 
@@ -22,7 +24,7 @@ div:has(+ div:hover) > img {
 Story thumbnails when you hover over the middle part.
 There's an extra div that eats the :hover when that happens
 */
-div:has(+ div:hover)
+div:has(+ div:hover, + div:focus)
     > div
     > div
     > div
@@ -39,6 +41,18 @@ Story thumbnails when you hover over the top part.
 There's an extra header div that eats the :hover when that happens
 */
 div:hover
+    + div
+    > div
+    > div
+    > div
+    > div
+    > div
+    > div
+    > div
+    > div
+    > div
+    > video:has(+ div[data-instancekey]),
+div:focus
     + div
     > div
     > div
