@@ -1,6 +1,6 @@
 :root {
-    --exact-filter-gray-active: grayscale(1);
-    --exact-filter-gray-inactive: grayscale(0);
+    --exact-filter-gray-active: grayscale(1) blur(8px);
+    --exact-filter-gray-inactive: grayscale(0) blur(0);
     --exact-filter-transition: filter 300ms ease-out;
 }
 
@@ -24,6 +24,34 @@ article:hover img,
 article:hover video {
     filter: var(--exact-filter-gray-inactive);
 }
+
+/* Videos in stories */
+video:has(~ div[data-instancekey]:hover) {
+    filter: var(--exact-filter-gray-inactive);
+}
+
+/* Story thumbnails in DM */
+div:has(+ div + div:hover) > div > img {
+    filter: var(--exact-filter-gray-inactive);
+}
+
+/*
+Story thumbnails when you hover over the middle part.
+There's an extra div that eats the :hover when that happens
+*/
+div:has(+ div:hover) > div > div > div > div > div > div > div > video:has(+ div[data-instancekey]) {
+    filter: var(--exact-filter-gray-inactive);
+}
+
+/*
+Story thumbnails when you hover over the top part.
+There's an extra header div that eats the :hover when that happens
+*/
+div:hover + div > div > div > div > div > div > div > div > div > div > video:has(+ div[data-instancekey]) {
+    filter: var(--exact-filter-gray-inactive);
+}
+
+
 /* [END] Workaround for Instagram */
 
 /* [START] Workaround for LinkedIn video thumbnails */
