@@ -1,0 +1,49 @@
+article:hover img,
+article:hover video {
+    filter: var(--exact-filter-gray-inactive);
+}
+
+/* Videos in stories */
+video:has(~ div[data-instancekey]:hover) {
+    filter: var(--exact-filter-gray-inactive);
+}
+
+/* Story thumbnails in DM */
+div:has(+ div + div:hover) > div > img {
+    filter: var(--exact-filter-gray-inactive);
+}
+
+/*
+Story thumbnails when you hover over the middle part.
+There's an extra div that eats the :hover when that happens
+*/
+div:has(+ div:hover)
+    > div
+    > div
+    > div
+    > div
+    > div
+    > div
+    > div
+    > video:has(+ div[data-instancekey]) {
+    filter: var(--exact-filter-gray-inactive);
+}
+
+/*
+Story thumbnails when you hover over the top part.
+There's an extra header div that eats the :hover when that happens
+*/
+div:hover
+    + div
+    > div
+    > div
+    > div
+    > div
+    > div
+    > div
+    > div
+    > div
+    > div
+    > video:has(+ div[data-instancekey]) {
+    filter: var(--exact-filter-gray-inactive);
+}
