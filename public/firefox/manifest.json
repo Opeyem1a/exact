@@ -12,7 +12,8 @@
             "matches": [
                 "*://*.instagram.com/*",
                 "*://*.linkedin.com/*",
-                "*://*.youtube.com/*"
+                "*://*.youtube.com/*",
+                "*://*.x.com/*"
             ],
             "js": ["content/main.js"],
             "css": ["content/main.css"]
@@ -24,6 +25,10 @@
         {
             "matches": ["*://*.linkedin.com/*"],
             "css": ["content/linkedin-exceptions.css"]
+        },
+        {
+            "matches": ["*://*.x.com/*"],
+            "css": ["content/twitter-exceptions.css"]
         }
     ],
     "browser_specific_settings": {

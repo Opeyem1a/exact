@@ -40,6 +40,11 @@ const STANDALONE_CSS_CONFIG_DEFS: Record<string, StandaloneCssConfig> = {
         outDir: `${BASE_DIST_DIR}/content`,
         assetFileNames: 'instagram-exceptions.css',
     },
+    'twitter-exceptions': {
+        target: 'src/content/main/twitter-exceptions.css',
+        outDir: `${BASE_DIST_DIR}/content`,
+        assetFileNames: 'twitter-exceptions.css',
+    },
 };
 
 export type { StandaloneIIFEScriptConfig, StandaloneCssConfig };

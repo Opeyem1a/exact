@@ -1,0 +1,19 @@
+:root {
+    --exact-filter-gray-active: grayscale(1) blur(4px);
+}
+
+/* Quote tweets with media in the quoted tweet - thumbnail */
+div:has(+ img) {
+    filter: var(--exact-filter-gray-active);
+    transition: var(--exact-filter-transition);
+}
+
+div:has(+ img:hover),
+div:has(+ img:focus) {
+    filter: var(--exact-filter-gray-inactive);
+}
+
+/* Quote tweets with media in the quoted tweet - video thumbnail */
+div:has(+ div:hover) > div > video {
+    filter: var(--exact-filter-gray-inactive);
+}
