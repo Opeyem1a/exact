@@ -1,17 +1,6 @@
-# Pretext
+# Exact
 
-**Pretext** is a modern template for building browser extensions (currently
-optimized for Firefox) using TypeScript, Vite, and Tailwind CSS. It provides a
-clean, minimal setup for developing content scripts, popup UIs, and background
-workers with fast build times and modular structure.
-
-### Features
-
-- Vite for fast development and builds
-- TypeScript for type-safe development
-- Tailwind CSS for utility-first styling
-- Clean project structure for content scripts, popups, and more
-- ESLint and Prettier configured out of the box
+Only see exactly the colours you need.
 
 ## Getting Started
 
@@ -23,8 +12,8 @@ workers with fast build times and modular structure.
 ### Installation
 
 ```bash
-git clone https://github.com/Opeyem1a/pretext.git
-cd pretext
+git clone https://github.com/Opeyem1a/exact.git
+cd exact
 yarn install
 ```
 
