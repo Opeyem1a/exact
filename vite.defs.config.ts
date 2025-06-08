@@ -30,6 +30,16 @@ const STANDALONE_CSS_CONFIG_DEFS: Record<string, StandaloneCssConfig> = {
         outDir: `${BASE_DIST_DIR}/content`,
         assetFileNames: 'main.css',
     },
+    'linkedin-exceptions': {
+        target: 'src/content/main/linkedin-exceptions.css',
+        outDir: `${BASE_DIST_DIR}/content`,
+        assetFileNames: 'linkedin-exceptions.css',
+    },
+    'instagram-exceptions': {
+        target: 'src/content/main/instagram-exceptions.css',
+        outDir: `${BASE_DIST_DIR}/content`,
+        assetFileNames: 'instagram-exceptions.css',
+    },
 };
 
 export type { StandaloneIIFEScriptConfig, StandaloneCssConfig };
