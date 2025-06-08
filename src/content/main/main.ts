@@ -1,1 +1,1 @@
-console.log('Pretext is here!');
+console.log('[exact] Encouraging focus in your browsing.');

@@ -22,11 +22,6 @@ const STANDALONE_SCRIPT_CONFIG_DEFS: Record<
         outDir: `${BASE_DIST_DIR}/content`,
         entryFileNames: 'main.js',
     },
-    background: {
-        target: 'src/background.ts',
-        outDir: `${BASE_DIST_DIR}/background`,
-        entryFileNames: 'background.js',
-    },
 };
 
 const STANDALONE_CSS_CONFIG_DEFS: Record<string, StandaloneCssConfig> = {

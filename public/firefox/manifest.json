@@ -1,19 +1,12 @@
 {
     "manifest_version": 2,
     "name": "Exact",
-    "version": "1.0.0",
-    "browser_action": {
-        "default_popup": "src/popup/popup.html",
-        "browser_style": true
-    },
+    "version": "0.0.0",
+    "permissions": [],
     "options_ui": {
         "page": "src/options/options.html",
         "browser_style": false
     },
-    "background": {
-        "scripts": ["background/background.js"]
-    },
-    "permissions": ["storage", "scripting"],
     "content_scripts": [
         {
             "matches": ["<all_urls>"],
