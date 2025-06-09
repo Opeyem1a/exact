@@ -10,8 +10,13 @@ video:has(~ div[data-instancekey]:hover, ~ div[data-instancekey]:focus) {
     filter: var(--exact-filter-gray-inactive);
 }
 
-/* Story thumbnails in DM */
+/* Post thumbnails in DM */
 div:has(+ div + div:hover, + div + div:focus) > div > img {
+    filter: var(--exact-filter-gray-inactive);
+}
+
+/* Post thumbnails in DM replies */
+div:has(+ div:hover, + div:focus) > div > img {
     filter: var(--exact-filter-gray-inactive);
 }
 
