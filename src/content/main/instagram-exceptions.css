@@ -42,6 +42,22 @@ div:has(+ div:hover, + div:focus)
 }
 
 /*
+Story thumbnails when you hover over the middle part and there's another post in the story.
+There's an extra div that eats the :hover when that happens
+*/
+div:has(+ div:hover, + div:focus) > div > div > img {
+    filter: var(--exact-filter-gray-inactive);
+}
+
+/*
+Story thumbnails when you hover over the top part and the story is an image.
+There's an extra div that eats the :hover when that happens
+*/
+div:hover + div > div > div > div > div > img {
+    filter: var(--exact-filter-gray-inactive);
+}
+
+/*
 Story thumbnails when you hover over the top part.
 There's an extra header div that eats the :hover when that happens
 */
