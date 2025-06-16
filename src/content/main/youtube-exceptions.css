@@ -40,3 +40,15 @@ div.ytp-cued-thumbnail-overlay:has(
     > div.ytp-cued-thumbnail-overlay-image {
     filter: var(--exact-filter-gray-inactive);
 }
+
+/**
+Playlist page thumbnails
+ */
+yt-thumbnail-view-model
+    div.yt-thumbnail-view-model__image:has(
+        ~ thumbnail-hover-overlay-view-model:hover,
+        ~ thumbnail-hover-overlay-view-model:focus
+    )
+    img.yt-core-image {
+    filter: var(--exact-filter-gray-inactive);
+}
