@@ -45,6 +45,11 @@ const STANDALONE_CSS_CONFIG_DEFS: Record<string, StandaloneCssConfig> = {
         outDir: `${BASE_DIST_DIR}/content`,
         assetFileNames: 'twitter-exceptions.css',
     },
+    'youtube-exceptions': {
+        target: 'src/content/main/youtube-exceptions.css',
+        outDir: `${BASE_DIST_DIR}/content`,
+        assetFileNames: 'youtube-exceptions.css',
+    },
 };
 
 export type { StandaloneIIFEScriptConfig, StandaloneCssConfig };

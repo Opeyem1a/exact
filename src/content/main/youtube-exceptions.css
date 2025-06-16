@@ -1,0 +1,8 @@
+/**
+Video page - Recommended videos on the right side -> Thumbnails
+    There's a hidden square div on top of the thumbnails in the middle, which breaks Exact
+ */
+ytd-moving-thumbnail-renderer:hover img,
+ytd-moving-thumbnail-renderer:focus img {
+    filter: var(--exact-filter-gray-inactive);
+}
