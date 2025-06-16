@@ -10,3 +10,11 @@ video.vjs-tech ~ div.vjs-poster:hover,
 video.vjs-tech ~ div.vjs-poster:focus {
     filter: grayscale(0);
 }
+
+div.feed-shared-celebration-image__image-container:has(
+        + figure:hover,
+        + figure:focus
+    )
+    img {
+    filter: var(--exact-filter-gray-inactive);
+}
