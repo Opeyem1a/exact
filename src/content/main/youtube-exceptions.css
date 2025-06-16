@@ -6,3 +6,37 @@ ytd-moving-thumbnail-renderer:hover img,
 ytd-moving-thumbnail-renderer:focus img {
     filter: var(--exact-filter-gray-inactive);
 }
+
+/**
+Video page - Main video static (before playing it) -> Thumbnail
+    It's secretly a div with background-image: url(...)
+ */
+div.ytp-cued-thumbnail-overlay-image {
+    transition: var(--exact-filter-transition);
+    filter: var(--exact-filter-gray-active);
+}
+
+div.ytp-cued-thumbnail-overlay-image:hover,
+div.ytp-cued-thumbnail-overlay-image:focus {
+    filter: var(--exact-filter-gray-inactive);
+}
+
+div.ytp-cued-thumbnail-overlay-image:has(
+        + button.ytp-button:hover,
+        + button.ytp-button:focus
+    ) {
+    filter: var(--exact-filter-gray-inactive);
+}
+
+/**
+When the control bar of the video is hovered, remove the filter
+ */
+div.ytp-cued-thumbnail-overlay:has(
+        ~ div.ytp-gradient-bottom:hover,
+        ~ div.ytp-gradient-bottom:focus,
+        ~ div.ytp-chrome-bottom:hover,
+        ~ div.ytp-chrome-bottom:focus
+    )
+    > div.ytp-cued-thumbnail-overlay-image {
+    filter: var(--exact-filter-gray-inactive);
+}
