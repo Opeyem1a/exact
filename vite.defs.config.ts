@@ -52,7 +52,4 @@ const STANDALONE_CSS_CONFIG_DEFS: Record<string, StandaloneCssConfig> = {
 };
 
 export type { StandaloneIIFEScriptConfig, StandaloneCssConfig };
-export {
-    STANDALONE_SCRIPT_CONFIG_DEFS,
-    STANDALONE_CSS_CONFIG_DEFS,
-};
+export { STANDALONE_SCRIPT_CONFIG_DEFS, STANDALONE_CSS_CONFIG_DEFS };
