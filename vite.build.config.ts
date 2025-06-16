@@ -5,12 +5,12 @@ import { resolve } from 'path';
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
 import {
-    BASE_DIST_DIR,
     STANDALONE_CSS_CONFIG_DEFS,
     STANDALONE_SCRIPT_CONFIG_DEFS,
     StandaloneCssConfig,
     StandaloneIIFEScriptConfig,
 } from './vite.defs.config';
+import { getDistManifestDir } from './src/utils/extension-targets';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -69,7 +69,7 @@ const webextConfig = defineConfig({
     ...shared,
     publicDir,
     build: {
-        outDir: BASE_DIST_DIR,
+        outDir: getDistManifestDir(),
         rollupOptions: {
             input: {
                 options: resolve(__dirname, 'src/options/options.html'),

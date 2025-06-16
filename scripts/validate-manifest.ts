@@ -1,6 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import { JSONObject, jsonParse, JSONValue } from '../src/utils/json';
+import { getDistManifestPath } from '../src/utils/extension-targets';
 
 const EXPECTED_FILE_EXTENSIONS = [
     '.js',
@@ -70,8 +71,4 @@ function checkNamedFilesExist(manifestPath: string) {
     }
 }
 
-const manifestPath =
-    process.env.BROWSER === 'firefox'
-        ? 'dist/firefox/manifest.json'
-        : 'dist/chrome/manifest.json';
-checkNamedFilesExist(manifestPath);
+checkNamedFilesExist(getDistManifestPath());
