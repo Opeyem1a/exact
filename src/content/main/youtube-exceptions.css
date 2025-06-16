@@ -1,9 +1,32 @@
 /**
-Video page - Recommended videos on the right side -> Thumbnails
+Thumbnails with play previews in general
     There's a hidden square div on top of the thumbnails in the middle, which breaks Exact
+    There are also hidden rectangles to the left of the "add to queue" and "watch later" buttons
+    The videos without autoplay also need the thumbnail image to unfilter when the overlay buttons are hovered
  */
-ytd-moving-thumbnail-renderer:hover img,
-ytd-moving-thumbnail-renderer:focus img {
+yt-image:has(
+        ~ div#overlays:hover,
+        ~ div#overlays:focus,
+        ~ div#mouseover-overlay:hover,
+        ~ div#mouseover-overlay:focus,
+        ~ div#hover-overlays:hover,
+        ~ div#hover-overlays:focus
+    )
+    img {
+    filter: var(--exact-filter-gray-inactive);
+}
+
+div#mouseover-overlay:has(
+        + div#hover-overlays:hover,
+        + div#hover-overlays:focus
+    )
+    ytd-moving-thumbnail-renderer
+    img {
+    filter: var(--exact-filter-gray-inactive);
+}
+
+ytd-moving-thumbnail-renderer:hover > img,
+ytd-moving-thumbnail-renderer:focus > img {
     filter: var(--exact-filter-gray-inactive);
 }
 
