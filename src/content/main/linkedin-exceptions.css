@@ -1,5 +1,5 @@
 :root {
-    --exact-filter-gray-active: grayscale(1) blur(6px);
+    --exact-filter-blur-radius: 6px;
 }
 
 video.vjs-tech ~ div.vjs-poster {

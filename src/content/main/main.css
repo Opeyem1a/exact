@@ -1,7 +1,17 @@
 :root {
-    --exact-filter-gray-active: grayscale(1) blur(8px);
+    --exact-filter-blur-radius: 8px;
+    --exact-filter-gray-active: grayscale(1)
+        blur(var(--exact-filter-blur-radius));
     --exact-filter-gray-inactive: grayscale(0) blur(0);
-    --exact-filter-transition: filter 300ms ease-out;
+    --exact-filter-transition: filter 200ms ease-out;
+}
+
+/**
+    @see {EXACT_EXTENSION_STATUS_ATTR_NAME}
+    @see {EXACT_EXTENSION_STATUS_ATTR_VALUE__DISABLED}
+ */
+html[data-exact-extension-status='disabled'] {
+    --exact-filter-gray-active: none;
 }
 
 /* Default grayscale for all media */

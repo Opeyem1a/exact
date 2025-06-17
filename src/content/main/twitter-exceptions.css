@@ -1,5 +1,5 @@
 :root {
-    --exact-filter-gray-active: grayscale(1) blur(4px);
+    --exact-filter-blur-radius: 4px;
 }
 
 /* Quote tweets with media in the quoted tweet - thumbnail */
