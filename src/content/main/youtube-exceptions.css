@@ -80,3 +80,17 @@ yt-thumbnail-view-model
     img.yt-core-image {
     filter: var(--exact-filter-gray-inactive);
 }
+
+/**
+Thumbnails that are live previewing, when you are using the little scrub bar that appears on them
+ */
+div#media-container:hover video {
+    filter: var(--exact-filter-gray-inactive);
+}
+
+/**
+The smaller preview thumbnails that appear when you use the srub bar on a dynamic preview thumbnail
+ */
+ytd-video-preview:hover img.ytPlayerStoryboardStoryboardImage {
+    filter: var(--exact-filter-gray-inactive);
+}
