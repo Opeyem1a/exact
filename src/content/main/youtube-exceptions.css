@@ -94,3 +94,10 @@ The smaller preview thumbnails that appear when you use the srub bar on a dynami
 ytd-video-preview:hover img.ytPlayerStoryboardStoryboardImage {
     filter: var(--exact-filter-gray-inactive);
 }
+
+/**
+Account avatars under previews on home page
+ */
+yt-avatar-shape:hover img {
+    filter: var(--exact-filter-gray-inactive);
+}
