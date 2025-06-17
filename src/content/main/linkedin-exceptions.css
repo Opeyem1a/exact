@@ -18,3 +18,17 @@ div.feed-shared-celebration-image__image-container:has(
     img {
     filter: var(--exact-filter-gray-inactive);
 }
+
+/**
+Frosted video thumbnail (it has a button covering it)
+ */
+img.update-components-linekdin-video__thumbnail-image:has(+ button:hover) {
+    filter: var(--exact-filter-gray-inactive);
+}
+
+/**
+Header image in job posting
+ */
+div.update-components-carousel-job__container:hover img {
+    filter: var(--exact-filter-gray-inactive);
+}
