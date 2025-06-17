@@ -64,6 +64,11 @@ div.ytp-cued-thumbnail-overlay:has(
     filter: var(--exact-filter-gray-inactive);
 }
 
+div#movie_player:hover video,
+div#movie_player:focus video {
+    filter: var(--exact-filter-gray-inactive);
+}
+
 /**
 Playlist page thumbnails
  */
