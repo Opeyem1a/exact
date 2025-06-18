@@ -21,7 +21,8 @@ div:has(+ div + div:hover, + div + div:focus) > div > img {
 
 This rule applies to a lot of thingsin Instagram tbh
 */
-div:hover > img {
+div:hover > img,
+div:focus > img {
     filter: var(--exact-filter-gray-inactive);
 }
 
@@ -58,7 +59,8 @@ div:has(+ div:hover, + div:focus) > div > div > img {
 Story thumbnails when you hover over the top part and the story is an image.
 There's an extra div that eats the :hover when that happens
 */
-div:hover + div > div > div > div > div > img {
+div:hover + div > div > div > div > div > img,
+div:focus + div > div > div > div > div > img {
     filter: var(--exact-filter-gray-inactive);
 }
 
