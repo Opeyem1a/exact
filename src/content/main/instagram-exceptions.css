@@ -15,8 +15,13 @@ div:has(+ div + div:hover, + div + div:focus) > div > img {
     filter: var(--exact-filter-gray-inactive);
 }
 
-/* Post thumbnails in DM replies */
-div:has(+ div:hover, + div:focus) > div > img {
+/*
+- Post thumbnails in DM replies & previews.
+- Story sent as a DM directly to user, and they open the preview
+
+This rule applies to a lot of thingsin Instagram tbh
+*/
+div:hover > img {
     filter: var(--exact-filter-gray-inactive);
 }
 
