@@ -19,7 +19,7 @@ div:has(+ div + div:hover, + div + div:focus) > div > img {
 - Post thumbnails in DM replies & previews.
 - Story sent as a DM directly to user, and they open the preview
 
-This rule applies to a lot of thingsin Instagram tbh
+This rule applies to a lot of things in Instagram tbh
 */
 div:hover > img,
 div:focus > img {
