@@ -1,7 +1,7 @@
 {
     "name": "exact",
     "version": "0.0.0",
-    "description": "",
+    "description": "Browse with intention",
     "type": "module",
     "engines": {
         "node": ">=20"
