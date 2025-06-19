@@ -72,7 +72,6 @@ const webextConfig = defineConfig({
         outDir: getDistManifestDir(),
         rollupOptions: {
             input: {
-                options: resolve(__dirname, 'src/options/options.html'),
                 popup: resolve(__dirname, 'src/popup/popup.html'),
             },
             output: {

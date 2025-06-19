@@ -1,6 +1,7 @@
 {
     "manifest_version": 3,
-    "name": "Exact",
+    "name": "Exact - Browse with intention",
+    "description": "Exact automatically removes the colour and resolution from all images and videos on target websites, but returns the colour and resolution on mouse hover or element focus.",
     "version": "0.0.0",
     "permissions": [],
     "icons": {
@@ -10,7 +11,6 @@
         "64": "assets/icon-64.png",
         "128": "assets/icon-128.png"
     },
-    "options_page": "src/options/options.html",
     "content_scripts": [
         {
             "matches": [

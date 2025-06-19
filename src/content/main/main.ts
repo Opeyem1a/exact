@@ -1,1 +1,1 @@
-console.log('[exact] Encouraging focus in your browsing.');
+console.log('[exact] Encouraging intention in your browsing.');
