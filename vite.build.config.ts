@@ -73,6 +73,7 @@ const webextConfig = defineConfig({
         rollupOptions: {
             input: {
                 options: resolve(__dirname, 'src/options/options.html'),
+                popup: resolve(__dirname, 'src/popup/popup.html'),
             },
             output: {
                 entryFileNames: '[name].js',

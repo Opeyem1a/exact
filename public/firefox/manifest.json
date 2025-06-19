@@ -2,7 +2,7 @@
     "manifest_version": 2,
     "name": "Exact",
     "version": "0.0.0",
-    "permissions": [],
+    "permissions": ["activeTab", "scripting", "tabs", "<all_urls>"],
     "icons": {
         "16": "assets/icon-16.png",
         "32": "assets/icon-32.png",
@@ -10,9 +10,16 @@
         "64": "assets/icon-64.png",
         "128": "assets/icon-128.png"
     },
+    "browser_action": {
+        "default_popup": "src/popup/popup.html",
+        "browser_style": false
+    },
     "options_ui": {
         "page": "src/options/options.html",
         "browser_style": false
+    },
+    "background": {
+        "scripts": ["background/background.js"]
     },
     "content_scripts": [
         {
