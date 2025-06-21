@@ -101,3 +101,13 @@ Account avatars under previews on home page
 yt-avatar-shape:hover img {
     filter: var(--exact-filter-gray-inactive);
 }
+
+/**
+Youtube shorts hovering over the UI or captions
+ */
+ytd-reel-video-renderer:hover img,
+ytd-reel-video-renderer:hover video,
+ytd-reel-video-renderer:focus img,
+ytd-reel-video-renderer:focus video {
+    filter: var(--exact-filter-gray-inactive);
+}
