@@ -94,3 +94,10 @@ div:focus
     > video:has(+ div[data-instancekey]) {
     filter: var(--exact-filter-gray-inactive);
 }
+
+/**
+Thumbnails in DMs when someone responds to a reel you sent to them
+ */
+div:has(+ div:hover) > div.html-div > img {
+    filter: var(--exact-filter-gray-inactive);
+}
