@@ -1,3 +1,7 @@
+:root {
+    --exact-filter-blur-radius: 12px;
+}
+
 /**
 Thumbnails with play previews in general
     There's a hidden square div on top of the thumbnails in the middle, which breaks Exact
