@@ -3,13 +3,20 @@
     "name": "Exact - Browse with intention",
     "description": "Exact automatically removes the colour and resolution from all images and videos on target websites, but returns the colour and resolution on mouse hover or element focus.",
     "version": "0.0.0",
-    "permissions": [],
+    "permissions": ["activeTab", "scripting", "tabs", "<all_urls>"],
     "icons": {
         "16": "assets/icon-16.png",
         "32": "assets/icon-32.png",
         "48": "assets/icon-48.png",
         "64": "assets/icon-64.png",
         "128": "assets/icon-128.png"
+    },
+    "action": {
+        "default_popup": "src/popup/popup.html"
+    },
+    "background": {
+        "service_worker": "background/background.js",
+        "type": "module"
     },
     "content_scripts": [
         {
@@ -33,6 +40,10 @@
         {
             "matches": ["*://*.x.com/*"],
             "css": ["content/twitter-exceptions.css"]
+        },
+        {
+            "matches": ["*://*.youtube.com/*"],
+            "css": ["content/youtube-exceptions.css"]
         }
     ]
 }
