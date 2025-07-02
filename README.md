@@ -59,4 +59,5 @@ yarn build
 ```
 
 Output is placed in the `dist/` directory with subdirectories for Chrome vs
-Firefox. You can then load it as a temporary extension in Firefox or Chrome.
+Firefox (there will be an extension.zip inside the folder). You can then load it
+as a temporary extension in Firefox or Chrome.
