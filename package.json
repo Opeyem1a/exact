@@ -26,7 +26,6 @@
         "@types/node": "^20.11.21",
         "@types/react": "^18.2.62",
         "@types/react-dom": "^18.2.18",
-        "@types/webextension-polyfill": "^0.12.3",
         "@vitejs/plugin-react": "^4.2.1",
         "autoprefixer": "^10.4.14",
         "eslint": "^9.17.0",
@@ -37,8 +36,7 @@
         "typescript": "^5.4.5",
         "typescript-eslint": "^8.32.1",
         "vite": "^5.2.10",
-        "vitest": "^3.1.4",
-        "webextension-polyfill": "^0.12.0"
+        "vitest": "^3.1.4"
     },
     "dependencies": {
         "react": "^18.2.0",
