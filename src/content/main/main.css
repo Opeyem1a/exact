@@ -32,7 +32,7 @@ still lock and unlock, just without the transition.
     --exact-gray: 1;
     --exact-contrast: 0.8;
     --exact-dim: 0.5;
-    --exact-blur: 6px;
+    --exact-blur: 16px;
     /*
     opacity() inside filter rather than the opacity property, so media a site
     hides with opacity: 0 (like X's <img> behind its background-image div)
