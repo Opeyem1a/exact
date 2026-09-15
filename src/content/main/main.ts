@@ -14,6 +14,13 @@ const MEDIA_SELECTOR = 'img, video, [style*="background-image"]';
 const OPEN_ATTR = 'data-exact-open';
 const PLAYING_ATTR = 'data-exact-playing';
 
+/**
+ * Only YouTube is somewhere you settle in to watch. Other sites autoplay their
+ * videos, so playback there isn't a choice and videos stay open only while
+ * held, like images.
+ */
+const PINS_PLAYING_VIDEOS = /(^|\.)youtube\.com$/.test(location.hostname);
+
 /** How long the pointer must rest on media before it opens */
 const DWELL_MS = 200;
 /** How long media stays open after the pointer leaves it */
@@ -132,6 +139,7 @@ const offscreenObserver = new IntersectionObserver((entries) => {
 });
 
 function markPlaying(el: Element) {
+    if (!PINS_PLAYING_VIDEOS) return;
     el.setAttribute(PLAYING_ATTR, '');
     offscreenObserver.observe(el);
 }

@@ -2,8 +2,8 @@
 
 Only see exactly the colours you need. Exact automatically removes the colour
 and resolution from all images and videos on target websites, but returns them
-when you rest your cursor on a piece of media or focus it with the keyboard. A
-video you start watching stays in colour while it plays.
+when you rest your cursor on a piece of media or focus it with the keyboard. On
+YouTube, a video you start watching stays in colour while it plays.
 
 The hypothesis is to create an experience where you only see the details and
 colours of content you are intentionally interacting with, reducing the number
