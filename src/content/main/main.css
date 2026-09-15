@@ -1,30 +1,78 @@
-:root {
-    --exact-filter-blur-radius: 8px;
-    --exact-filter-gray-active: grayscale(1)
-        blur(var(--exact-filter-blur-radius));
-    --exact-filter-gray-inactive: grayscale(0) blur(0);
-    --exact-filter-transition: filter 200ms ease-out;
-}
-
 /**
-    @see {EXACT_EXTENSION_STATUS_ATTR_NAME}
-    @see {EXACT_EXTENSION_STATUS_ATTR_VALUE__DISABLED}
+Exact's "lock". Every image, video and background-image element is grey, dim
+and blurred until main.ts marks it open or playing.
+
+Registered properties let blur and colour transition separately, so the blur
+clears first and the colour develops in after it. Browsers without @property
+still lock and unlock, just without the transition.
  */
-html[data-exact-extension-status='disabled'] {
-    --exact-filter-gray-active: none;
+@property --exact-gray {
+    syntax: '<number>';
+    inherits: false;
+    initial-value: 0;
+}
+@property --exact-contrast {
+    syntax: '<number>';
+    inherits: false;
+    initial-value: 1;
+}
+@property --exact-dim {
+    syntax: '<number>';
+    inherits: false;
+    initial-value: 1;
+}
+@property --exact-blur {
+    syntax: '<length>';
+    inherits: false;
+    initial-value: 0px;
 }
 
-/* Default grayscale for all media */
-img,
-video {
-    filter: var(--exact-filter-gray-active);
-    transition: var(--exact-filter-transition);
+/* Media selectors: keep in sync with MEDIA_SELECTOR in main.ts */
+:is(img, video, [style*='background-image']) {
+    --exact-gray: 1;
+    --exact-contrast: 0.8;
+    --exact-dim: 0.5;
+    --exact-blur: 6px;
+    /*
+    opacity() inside filter rather than the opacity property, so media a site
+    hides with opacity: 0 (like X's <img> behind its background-image div)
+    stays hidden
+     */
+    filter: grayscale(var(--exact-gray)) contrast(var(--exact-contrast))
+        opacity(var(--exact-dim)) blur(var(--exact-blur));
+    /* Filters paint before clipping, so this trims the blur's soft halo */
+    clip-path: inset(0);
 }
 
-/* Restore color on hover/focus or if parent is hovered */
-img:hover,
-img:focus,
-video:hover,
-video:focus {
-    filter: var(--exact-filter-gray-inactive);
+:is(img, video, [style*='background-image']):is(
+        [data-exact-open],
+        [data-exact-playing]
+    ) {
+    --exact-gray: 0;
+    --exact-contrast: 1;
+    --exact-dim: 1;
+    --exact-blur: 0px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    /* Relocking: colour drains first, then the blur returns */
+    :is(img, video, [style*='background-image']) {
+        transition:
+            --exact-gray 160ms ease,
+            --exact-contrast 160ms ease,
+            --exact-dim 240ms ease,
+            --exact-blur 240ms ease-out 80ms;
+    }
+
+    /* Opening: the blur clears, then colour develops in after a beat */
+    :is(img, video, [style*='background-image']):is(
+            [data-exact-open],
+            [data-exact-playing]
+        ) {
+        transition:
+            --exact-blur 180ms ease-out,
+            --exact-dim 180ms ease-out,
+            --exact-gray 420ms ease 140ms,
+            --exact-contrast 420ms ease 140ms;
+    }
 }

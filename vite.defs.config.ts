@@ -21,11 +21,6 @@ const STANDALONE_SCRIPT_CONFIG_DEFS: Record<
         outDir: `${getDistManifestDir()}/content`,
         entryFileNames: 'main.js',
     },
-    background: {
-        target: 'src/background.ts',
-        outDir: `${getDistManifestDir()}/background`,
-        entryFileNames: 'background.js',
-    },
 };
 
 const STANDALONE_CSS_CONFIG_DEFS: Record<string, StandaloneCssConfig> = {
@@ -33,26 +28,6 @@ const STANDALONE_CSS_CONFIG_DEFS: Record<string, StandaloneCssConfig> = {
         target: 'src/content/main/main.css',
         outDir: `${getDistManifestDir()}/content`,
         assetFileNames: 'main.css',
-    },
-    'linkedin-exceptions': {
-        target: 'src/content/main/linkedin-exceptions.css',
-        outDir: `${getDistManifestDir()}/content`,
-        assetFileNames: 'linkedin-exceptions.css',
-    },
-    'instagram-exceptions': {
-        target: 'src/content/main/instagram-exceptions.css',
-        outDir: `${getDistManifestDir()}/content`,
-        assetFileNames: 'instagram-exceptions.css',
-    },
-    'twitter-exceptions': {
-        target: 'src/content/main/twitter-exceptions.css',
-        outDir: `${getDistManifestDir()}/content`,
-        assetFileNames: 'twitter-exceptions.css',
-    },
-    'youtube-exceptions': {
-        target: 'src/content/main/youtube-exceptions.css',
-        outDir: `${getDistManifestDir()}/content`,
-        assetFileNames: 'youtube-exceptions.css',
     },
 };
 
