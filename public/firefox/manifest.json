@@ -1,7 +1,7 @@
 {
     "manifest_version": 2,
-    "name": "Exact - Browse with intention",
-    "description": "Exact automatically removes the colour and resolution from all images and videos on target websites, but returns the colour and resolution on mouse hover or element focus.",
+    "name": "Exact — Browse with intention",
+    "description": "Instagram, X, LinkedIn and YouTube arrive in grey. Rest your cursor on a photo or video and it develops into full colour.",
     "version": "0.0.0",
     "icons": {
         "16": "assets/icon-16.png",
