@@ -181,6 +181,17 @@ window.addEventListener(
     { capture: true, passive: true }
 );
 
+/**
+ * New media can appear under a resting pointer without it moving, like the
+ * next Instagram story. It opens after the usual dwell, as if the pointer had
+ * just arrived.
+ */
+new MutationObserver(requestUpdate).observe(document.documentElement, {
+    childList: true,
+    subtree: true,
+    attributeFilter: ['src', 'srcset'],
+});
+
 document.addEventListener('focusin', (event) => {
     const target = event.target;
     // Only visible (keyboard) focus: clicking also focuses buttons and links,
@@ -231,6 +242,8 @@ document.addEventListener(
         cancel(target);
         close(target);
         unmarkPlaying(target);
+        // Re-check in case the pointer is still resting on it
+        requestUpdate();
     },
     true
 );
