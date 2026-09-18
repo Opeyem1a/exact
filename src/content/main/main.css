@@ -1,6 +1,7 @@
 /**
 Exact's "lock". Every image, video and background-image element is grey, dim
-and blurred until main.ts marks it open or playing.
+and blurred until main.ts marks it open or playing, or until Exact is disabled
+on the page from the popup.
 
 Registered properties let blur and colour transition separately, so the blur
 clears first and the colour develops in after it. Browsers without @property
@@ -46,7 +47,8 @@ still lock and unlock, just without the transition.
 
 :is(img, video, [style*='background-image']):is(
         [data-exact-open],
-        [data-exact-playing]
+        [data-exact-playing],
+        html[data-exact-disabled] *
     ) {
     --exact-gray: 0;
     --exact-contrast: 1;
@@ -67,7 +69,8 @@ still lock and unlock, just without the transition.
     /* Opening: the blur clears, then colour develops in after a beat */
     :is(img, video, [style*='background-image']):is(
             [data-exact-open],
-            [data-exact-playing]
+            [data-exact-playing],
+            html[data-exact-disabled] *
         ) {
         transition:
             --exact-blur 180ms ease-out,
