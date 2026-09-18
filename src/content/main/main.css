@@ -48,7 +48,7 @@ still lock and unlock, just without the transition.
 :is(img, video, [style*='background-image']):is(
         [data-exact-open],
         [data-exact-playing],
-        html[data-exact-disabled] *
+        html[data-exact-status='disabled'] *
     ) {
     --exact-gray: 0;
     --exact-contrast: 1;
@@ -70,7 +70,7 @@ still lock and unlock, just without the transition.
     :is(img, video, [style*='background-image']):is(
             [data-exact-open],
             [data-exact-playing],
-            html[data-exact-disabled] *
+            html[data-exact-status='disabled'] *
         ) {
         transition:
             --exact-blur 180ms ease-out,

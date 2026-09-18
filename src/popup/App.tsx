@@ -25,8 +25,8 @@ const Popup = () => {
             .catch(() => setPage('unsupported'));
     }, []);
 
-    const setDisabled = (disabled: boolean) => {
-        sendToActiveTab({ type: 'exact:set-disabled', disabled })
+    const setStatus = (status: ExactStatus) => {
+        sendToActiveTab({ type: 'exact:set-status', status })
             .then(setPage)
             .catch(() => setPage('unsupported'));
     };
@@ -44,25 +44,27 @@ const Popup = () => {
                     Exact isn&rsquo;t running on this page.
                 </p>
             )}
-            {typeof page === 'object' && (
+            {(page === 'enabled' || page === 'disabled') && (
                 <div className="flex flex-col gap-1.5">
                     <button
                         className={`
                             h-9 rounded-md px-3 text-sm transition-colors
                             ${
-                                page.disabled
+                                page === 'disabled'
                                     ? 'bg-[#16131C] text-[#F8F6FB] hover:bg-[#16131C]/90'
                                     : 'bg-white text-[#16131C] border border-[#16131C]/15 hover:bg-white/70'
                             }
                         `}
-                        onClick={() => setDisabled(!page.disabled)}
+                        onClick={() =>
+                            setStatus(
+                                page === 'disabled' ? 'enabled' : 'disabled'
+                            )
+                        }
                     >
-                        {page.disabled
-                            ? 'Enable on this page'
-                            : 'Disable on this page'}
+                        {page === 'disabled' ? 'Enable' : 'Disable'}
                     </button>
                     <p className="text-xs text-[#6C6479]">
-                        {page.disabled
+                        {page === 'disabled'
                             ? 'Exact is off in this tab until you enable it or reload the page.'
                             : 'Turns Exact off in this tab until you reload.'}
                     </p>

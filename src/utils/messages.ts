@@ -4,11 +4,9 @@
  */
 type ExactMessage =
     | { type: 'exact:get-status' }
-    | { type: 'exact:set-disabled'; disabled: boolean };
+    | { type: 'exact:set-status'; status: ExactStatus };
 
-interface ExactStatus {
-    disabled: boolean;
-}
+type ExactStatus = 'enabled' | 'disabled';
 
 /**
  * Firefox's promise-based `browser`, or Chrome's `chrome`, which returns
