@@ -40,7 +40,7 @@ const Popup = () => {
                 while they play.
             </p>
             {page === 'unsupported' && (
-                <p className="text-xs text-[#6C6479]">
+                <p className="text-xs text-gray-500">
                     Exact isn&rsquo;t running on this page.
                 </p>
             )}
@@ -51,8 +51,8 @@ const Popup = () => {
                             h-9 rounded-md px-3 text-sm transition-colors
                             ${
                                 page === 'disabled'
-                                    ? 'bg-[#16131C] text-[#F8F6FB] hover:bg-[#16131C]/90'
-                                    : 'bg-white text-[#16131C] border border-[#16131C]/15 hover:bg-white/70'
+                                    ? 'bg-gray-900 text-gray-50 hover:bg-gray-900/90'
+                                    : 'bg-white text-gray-900 border border-gray-200 hover:bg-gray-50'
                             }
                         `}
                         onClick={() =>
@@ -63,7 +63,7 @@ const Popup = () => {
                     >
                         {page === 'disabled' ? 'Enable' : 'Disable'}
                     </button>
-                    <p className="text-xs text-[#6C6479]">
+                    <p className="text-xs text-gray-500">
                         {page === 'disabled'
                             ? 'Exact is off in this tab until you enable it or reload the page.'
                             : 'Turns Exact off in this tab until you reload.'}
