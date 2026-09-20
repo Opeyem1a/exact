@@ -9,17 +9,17 @@ description live here and are pasted into each store's own fields.
 ### Name
 
 ```
-Exact — Browse with intention
+Exact - Browse with intention
 ```
 
 ### Summary
 
-AMO's summary field allows 250 characters. Chrome takes its short description
-from `manifest.description`, which is capped at 132 — that shorter form is
-already in `public/*/manifest.json`.
+This is live on AMO. At 128 characters it also fits Chrome's 132-character cap
+on `manifest.description`, so both manifests carry it verbatim and the two
+stores cannot drift apart.
 
 ```
-Photos and videos on Instagram, X, LinkedIn and YouTube show up grey and blurred. Point at one and the colour comes back. Nothing is blocked — the feed just stops deciding what catches your eye.
+Make social media sites less distracting by default. Only see what you hover over with your cursor. Stay intentional on the web.
 ```
 
 ### Description
@@ -27,19 +27,14 @@ Photos and videos on Instagram, X, LinkedIn and YouTube show up grey and blurred
 ```
 Every photo and video on Instagram, X, LinkedIn and YouTube shows up grey and blurred. Point at one and the colour comes back. Move away and it fades again.
 
-That's the whole thing.
-
-You end up looking at something because you decided to, not because it moved. Nothing is blocked and nothing is hidden — the feed still holds everything it held before.
+You only interact with content intentionally. Only on purpose.
 
 HOW IT BEHAVES
 
 • It opens after your cursor sits still on something for a moment, so sweeping past a post doesn't set it off.
 • Scrolling doesn't count. Posts sliding under a parked cursor stay grey.
-• Something new appearing under a resting cursor, like the next story, opens after the same short pause. You don't have to move the cursor again.
 • Tab to a post with the keyboard and it opens straight away.
 • On YouTube, a video you start watching stays in colour until it pauses, ends, or scrolls off screen.
-• Opening a post in a lightbox doesn't light up the feed behind it.
-• Pause it on any page from the toolbar button. It stays off in that tab until you switch it back on or reload.
 
 Because things only open when you point at them, a screen running Exact is also a quiet one. In an open-plan office or on a train, what's visible from three feet away is a grid of grey rectangles.
 
@@ -49,7 +44,7 @@ Instagram, X, LinkedIn and YouTube. It does nothing on any other site.
 
 PRIVACY
 
-No accounts, no analytics, no network requests, nothing stored. Exact asks for no permissions beyond those four sites — it's one stylesheet and one script that watches where your pointer is. The source is on GitHub.
+No accounts, no analytics, no network requests, nothing stored. Exact asks for no permissions beyond those four sites. It's one stylesheet and one script that watches where your pointer is.
 ```
 
 ### Tags
