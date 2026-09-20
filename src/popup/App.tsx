@@ -59,7 +59,7 @@ const Popup = () => {
                     <p className="text-xs text-gray-500">
                         {page === 'enabled'
                             ? 'Browsing intentionally.'
-                            : 'Paused for now. Exact is back when you reload.'}
+                            : 'Paused for now.'}
                     </p>
                     <button
                         className={`
