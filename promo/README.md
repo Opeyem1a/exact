@@ -118,8 +118,24 @@ toggle again.
 
 ## Regenerating
 
+Nothing in this folder builds the extension, and `zip:source` excludes it so it
+stays out of the bundle store reviewers receive.
+
+The source captures are not committed. They are the screenshots already
+published on the listing, so they are always one request away, and they contain
+a personal profile page that does not belong in a public repo:
+
 ```bash
-python3 promo/src/gen_promo.py /tmp/exact-promo promo/src/captures
+mkdir -p /tmp/exact-captures
+curl -s "https://addons.mozilla.org/api/v5/addons/addon/exact-browse-with-intention/" \
+  | python3 -c "import json,sys;[print(p['image_url']) for p in json.load(sys.stdin)['previews']]" \
+  | while read -r u; do curl -s -o "/tmp/exact-captures/$(basename "${u%%\?*}")" "$u"; done
+```
+
+Then build the frames and shoot them:
+
+```bash
+python3 promo/tools/gen_promo.py /tmp/exact-promo /tmp/exact-captures
 
 CHROME="/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
 for f in /tmp/exact-promo/*.html; do
@@ -131,8 +147,9 @@ done
 ```
 
 Add `--force-device-scale-factor=2` for the 2× set. The headline font,
-Instrument Serif, is bundled in `src/fonts` (SIL Open Font License) and inlined
-into each page, so renders need no network and never fall back to Georgia.
+Instrument Serif, is bundled in `tools/fonts` (SIL Open Font License) and
+inlined into each page, so renders need no network and never fall back to
+Georgia.
 
 Each frame in `gen_promo.py` lists its tiles as rectangles in capture pixels,
 plus which tile the cursor rests on. New captures at a different window size
