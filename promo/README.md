@@ -116,41 +116,17 @@ but the popup now has a live preview, a status line and a single button, so the
 published image no longer matches what installs. Reshoot it rather than drop it:
 "can I turn it off" is the first question a listing like this has to answer.
 
-## Regenerating
+## Remaking these
 
-Nothing in this folder builds the extension, and `zip:source` excludes it so it
-stays out of the bundle store reviewers receive.
+There is no build step here and nothing to run. The PNGs are the deliverable;
+remake them by hand, or ask for them to be rebuilt, when the listing changes.
 
-The source captures are not committed. They are the screenshots already
-published on the listing, so they are always one request away, and they contain
-a personal profile page that does not belong in a public repo:
+For reference, they are 1280x800 with the capture bleeding off the right and
+bottom edges, type in a column on the left: Instrument Serif at 58px over a 16px
+serif sub, near-black on white. The source captures are the screenshots already
+on the listing, fetched from the AMO API:
 
 ```bash
-mkdir -p /tmp/exact-captures
 curl -s "https://addons.mozilla.org/api/v5/addons/addon/exact-browse-with-intention/" \
-  | python3 -c "import json,sys;[print(p['image_url']) for p in json.load(sys.stdin)['previews']]" \
-  | while read -r u; do curl -s -o "/tmp/exact-captures/$(basename "${u%%\?*}")" "$u"; done
+  | python3 -c "import json,sys;[print(p['image_url']) for p in json.load(sys.stdin)['previews']]"
 ```
-
-Then build the frames and shoot them:
-
-```bash
-python3 promo/tools/gen_promo.py /tmp/exact-promo /tmp/exact-captures
-
-CHROME="/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
-for f in /tmp/exact-promo/*.html; do
-  n=$(basename "$f" .html)
-  "$CHROME" --headless --disable-gpu --hide-scrollbars --force-color-profile=srgb \
-    --allow-file-access-from-files --virtual-time-budget=6000 --window-size=1280,800 \
-    --screenshot="promo/screenshots/1280x800/$n.png" "file://$f"
-done
-```
-
-Add `--force-device-scale-factor=2` for the 2× set. The headline font,
-Instrument Serif, is bundled in `tools/fonts` (SIL Open Font License) and
-inlined into each page, so renders need no network and never fall back to
-Georgia.
-
-Each frame in `gen_promo.py` lists its tiles as rectangles in capture pixels,
-plus which tile the cursor rests on. New captures at a different window size
-will need those rectangles rechecked.
