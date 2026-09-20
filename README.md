@@ -26,6 +26,9 @@ How it behaves:
   ends, or scrolls away.
 - An open post in a modal doesn't light up the feed behind it.
 
+You can disable Exact on the current page from the toolbar popup. It stays off
+in that tab until you enable it again or reload.
+
 ### Support
 
 Exact currently supports the following websites:
