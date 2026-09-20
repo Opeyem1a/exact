@@ -1,33 +1,27 @@
 # Exact
 
-**Instagram, X, LinkedIn and YouTube arrive in grey. Rest your cursor on a photo
-or video and it develops into full colour.**
+**Every photo and video on Instagram, X, LinkedIn and YouTube shows up grey and
+blurred. Point at one and the colour comes back.**
 
-You don't choose most of what you look at. Something bright moves at the edge of
-the screen and your eye is already there. Exact removes that pull without
-removing anything you came for: every image and video loads grey, soft and dim,
-and develops only when you rest your cursor on it or reach it with the keyboard.
+Move away and it fades again. That's the whole thing.
 
-Nothing is blocked, nothing is hidden, and no timer runs out. The feed still
-holds everything it held before — it just no longer decides which part of it you
-look at.
+You end up looking at something because you decided to, not because it moved.
+Nothing is blocked and nothing is hidden — the feed still holds everything it
+held before.
 
 How it behaves:
 
-- Media opens after your cursor rests on it for a moment, so passing over a post
-  doesn't set it off.
-- Scrolling doesn't count. Content sliding underneath a parked cursor stays
-  closed — that isn't a choice you made.
-- New media that appears under a resting cursor, like the next Instagram story,
-  opens after the same short rest. You don't need to move the cursor again.
-- Keyboard focus opens media immediately. Tabbing to something is already
-  deliberate.
-- On YouTube, a video you start watching stays in full colour until it pauses,
-  ends, or scrolls away.
-- An open post in a modal doesn't light up the feed behind it.
-
-You can disable Exact on the current page from the toolbar popup. It stays off
-in that tab until you enable it again or reload.
+- It opens after your cursor sits still on something for a moment, so sweeping
+  past a post doesn't set it off.
+- Scrolling doesn't count. Posts sliding under a parked cursor stay grey.
+- Something new appearing under a resting cursor, like the next story, opens
+  after the same short pause. You don't have to move the cursor again.
+- Tab to a post with the keyboard and it opens straight away.
+- On YouTube, a video you start watching stays in colour until it pauses, ends,
+  or scrolls off screen.
+- Opening a post in a lightbox doesn't light up the feed behind it.
+- Pause it on any page from the toolbar button. It stays off in that tab until
+  you switch it back on or reload.
 
 ### Support
 

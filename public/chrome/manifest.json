@@ -1,7 +1,7 @@
 {
     "manifest_version": 3,
     "name": "Exact — Browse with intention",
-    "description": "Instagram, X, LinkedIn and YouTube arrive in grey. Rest your cursor on a photo or video and it develops into full colour.",
+    "description": "Photos and videos on Instagram, X, LinkedIn and YouTube show up grey. Point at one and the colour comes back.",
     "version": "0.0.0",
     "icons": {
         "16": "assets/icon-16.png",

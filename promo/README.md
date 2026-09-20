@@ -19,37 +19,37 @@ from `manifest.description`, which is capped at 132 — that shorter form is
 already in `public/*/manifest.json`.
 
 ```
-Instagram, X, LinkedIn and YouTube arrive in grey. Rest your cursor on a photo or video and it develops into full colour. Nothing is blocked, nothing is hidden — the feed just stops deciding what catches your eye. You do.
+Photos and videos on Instagram, X, LinkedIn and YouTube show up grey and blurred. Point at one and the colour comes back. Nothing is blocked — the feed just stops deciding what catches your eye.
 ```
 
 ### Description
 
 ```
-You don't choose most of what you look at. Something bright moves at the edge of the screen and your eye is already there.
+Every photo and video on Instagram, X, LinkedIn and YouTube shows up grey and blurred. Point at one and the colour comes back. Move away and it fades again.
 
-Exact removes that pull without removing anything you came for. On Instagram, X, LinkedIn and YouTube, every image and video loads grey, soft and dim. Rest your cursor on one and it develops — the blur lifts first, then the colour comes back. Move away and it settles down again.
+That's the whole thing.
 
-Nothing is blocked. Nothing is deleted. No timer runs out, no site is locked at 9pm, and there is no streak to keep. The feed still holds everything it held before. It just no longer decides which part of it you look at.
+You end up looking at something because you decided to, not because it moved. Nothing is blocked and nothing is hidden — the feed still holds everything it held before.
 
 HOW IT BEHAVES
 
-• Media opens after your cursor rests on it for a moment, so passing over a post doesn't set it off.
-• Scrolling doesn't count. Content sliding underneath a parked cursor stays closed — that isn't a choice you made.
-• Keyboard focus opens media immediately. Tabbing to something is already deliberate.
-• On YouTube, a video you start watching stays in full colour until it pauses, ends, or scrolls away.
-• An open post in a modal doesn't light up the feed behind it.
+• It opens after your cursor sits still on something for a moment, so sweeping past a post doesn't set it off.
+• Scrolling doesn't count. Posts sliding under a parked cursor stay grey.
+• Something new appearing under a resting cursor, like the next story, opens after the same short pause. You don't have to move the cursor again.
+• Tab to a post with the keyboard and it opens straight away.
+• On YouTube, a video you start watching stays in colour until it pauses, ends, or scrolls off screen.
+• Opening a post in a lightbox doesn't light up the feed behind it.
+• Pause it on any page from the toolbar button. It stays off in that tab until you switch it back on or reload.
 
-Because media only opens when you point at it, a page with Exact on it is also a quiet page. In an open-plan office, on a train, in a coffee shop, what's on your screen from three feet away is a grid of grey rectangles. Nobody's reading your feed over your shoulder — not because it's hidden, but because there's nothing there to catch their eye either.
+Because things only open when you point at them, a screen running Exact is also a quiet one. In an open-plan office or on a train, what's visible from three feet away is a grid of grey rectangles.
 
 WHERE IT WORKS
 
-Instagram, X (Twitter), LinkedIn and YouTube. Exact runs only on those four sites and does nothing anywhere else.
+Instagram, X, LinkedIn and YouTube. It does nothing on any other site.
 
-YOUR DATA
+PRIVACY
 
-No accounts, no analytics, no network requests, no data leaves your machine. Exact is a stylesheet and one content script that watches where your pointer is. It asks for no permissions beyond running on those four sites, and the source is open.
-
-Made for people who don't want to quit these sites — only to stop being handed things to look at.
+No accounts, no analytics, no network requests, nothing stored. Exact asks for no permissions beyond those four sites — it's one stylesheet and one script that watches where your pointer is. The source is on GitHub.
 ```
 
 ### Tags
@@ -108,13 +108,13 @@ fresh capture session:
 - **Keyboard focus opens immediately.** Shoot a focus ring on a post that has
   opened, with no cursor in frame.
 
-### Do not reuse the old fourth screenshot
+### The fourth screenshot needs reshooting, not deleting
 
-The popup capture still on the live listing (`src/captures/327035.png`) shows
-Enable and Disable buttons. That toggle was added in `46752cb` and removed in
-`4ade545` when unlocking moved to JS, so the current popup has no controls at
-all. The image advertises a feature that does not ship — replace it or ship the
-toggle again.
+The popup capture on the live listing shows an older Enable/Disable dialog. The
+toggle itself is back as of #55, so the feature it advertises does ship again —
+but the popup now has a live preview, a status line and a single button, so the
+published image no longer matches what installs. Reshoot it rather than drop it:
+"can I turn it off" is the first question a listing like this has to answer.
 
 ## Regenerating
 
