@@ -7,12 +7,16 @@
  * so the media element itself rarely receives :hover.
  */
 
+import { extension, ExactMessage, ExactStatus } from '../../utils/messages';
+
 console.log('[exact] Encouraging intention in your browsing.');
 
 /** Keep in sync with the media selectors in main.css */
 const MEDIA_SELECTOR = 'img, video, [style*="background-image"]';
 const OPEN_ATTR = 'data-exact-open';
 const PLAYING_ATTR = 'data-exact-playing';
+/** Set on <html>. Keep in sync with main.css */
+const STATUS_ATTR = 'data-exact-status';
 
 /**
  * Only YouTube is somewhere you settle in to watch. Other sites autoplay their
@@ -246,4 +250,24 @@ document.addEventListener(
         requestUpdate();
     },
     true
+);
+
+/**
+ * Disabling from the popup lasts until the page reloads, so it survives the
+ * in-app navigation these sites use.
+ * main.css opens all media while the status is 'disabled'.
+ */
+extension.runtime.onMessage.addListener(
+    (message: ExactMessage, _sender, sendResponse) => {
+        if (message.type === 'exact:set-status') {
+            document.documentElement.setAttribute(STATUS_ATTR, message.status);
+            // Relock whatever the pointer isn't resting on
+            if (message.status === 'enabled') requestUpdate();
+        }
+        const status: ExactStatus =
+            document.documentElement.getAttribute(STATUS_ATTR) === 'disabled'
+                ? 'disabled'
+                : 'enabled';
+        sendResponse(status);
+    }
 );

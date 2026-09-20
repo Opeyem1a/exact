@@ -12,6 +12,9 @@ of times an algorithm's suggestions can steal your focus.
 Make the decision to interact with content intentionally. Exact removes a major
 psychological tool content uses farm your attention.
 
+You can disable Exact on the current page from the toolbar popup. It stays off
+in that tab until you enable it again or reload.
+
 ### Support
 
 Exact currently supports the following websites:
