@@ -121,10 +121,13 @@ published image no longer matches what installs. Reshoot it rather than drop it:
 There is no build step here and nothing to run. The PNGs are the deliverable;
 remake them by hand, or ask for them to be rebuilt, when the listing changes.
 
-For reference, they are 1280x800 with the capture bleeding off the right and
-bottom edges, type in a column on the left: Instrument Serif at 58px over a 16px
-serif sub, near-black on white. The source captures are the screenshots already
-on the listing, fetched from the AMO API:
+For reference: 1280x800 on a grey studio gradient. The media tiles are cut out
+of the capture and laid in a row that runs off the right edge, all of them grey
+except one, with a cursor and a highlight ring resting on the one in colour.
+Type sits in a column on the left, Instrument Serif at 58px over a 16px serif
+sub, near-black. No browser chrome anywhere.
+
+The source captures are the screenshots already on the listing:
 
 ```bash
 curl -s "https://addons.mozilla.org/api/v5/addons/addon/exact-browse-with-intention/" \
