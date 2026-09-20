@@ -40,7 +40,8 @@ const Popup = () => {
                 </p>
             )}
             {(page === 'enabled' || page === 'disabled') && (
-                <div className="flex flex-col gap-1.5">
+                <div className="flex flex-col gap-3">
+                    <div className="preview" data-status={page} aria-hidden />
                     <button
                         className={`
                             h-9 rounded-md px-3 text-sm transition-colors
@@ -59,7 +60,7 @@ const Popup = () => {
                         {page === 'disabled' ? 'Enable' : 'Disable'}
                     </button>
                     {page === 'disabled' && (
-                        <p className="text-xs text-gray-500">
+                        <p className="text-xs text-gray-500 -mt-1.5">
                             Off until you enable it or reload the page.
                         </p>
                     )}
