@@ -32,16 +32,11 @@ const Popup = () => {
     };
 
     return (
-        <div className="w-60 p-4 flex flex-col gap-3">
+        <div className="w-56 p-4 flex flex-col gap-3">
             <h1 className="font-semibold">Exact</h1>
-            <p className="text-xs text-gray-500">
-                Images and videos on Instagram, LinkedIn, X and YouTube stay
-                grey until you rest your cursor on them. Videos stay in colour
-                while they play.
-            </p>
             {page === 'unsupported' && (
                 <p className="text-xs text-gray-500">
-                    Exact isn&rsquo;t running on this page.
+                    Exact doesn&rsquo;t run on this page.
                 </p>
             )}
             {(page === 'enabled' || page === 'disabled') && (
@@ -63,11 +58,11 @@ const Popup = () => {
                     >
                         {page === 'disabled' ? 'Enable' : 'Disable'}
                     </button>
-                    <p className="text-xs text-gray-500">
-                        {page === 'disabled'
-                            ? 'Exact is off in this tab until you enable it or reload the page.'
-                            : 'Turns Exact off in this tab until you reload.'}
-                    </p>
+                    {page === 'disabled' && (
+                        <p className="text-xs text-gray-500">
+                            Off until you enable it or reload the page.
+                        </p>
+                    )}
                 </div>
             )}
         </div>
