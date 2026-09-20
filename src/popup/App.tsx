@@ -40,50 +40,44 @@ const Popup = () => {
                 </p>
             )}
             {(page === 'enabled' || page === 'disabled') && (
-                <div className="flex flex-col gap-3">
+                <div className="flex flex-col gap-2">
                     {/*
-                    The preview and the label are one control, so clicking
-                    either toggles and there's a single focus stop. The label
-                    carries the state and the hint below carries the action
+                    A second way to hit the button, for anyone who reads the
+                    preview as the thing to click. Keyboard users get the
+                    button itself, so this stays out of the tab order
                      */}
+                    <span
+                        className="preview w-full cursor-pointer"
+                        data-status={page}
+                        aria-hidden
+                        onClick={() =>
+                            setStatus(
+                                page === 'disabled' ? 'enabled' : 'disabled'
+                            )
+                        }
+                    />
+                    <p className="text-xs text-gray-500">
+                        {page === 'enabled'
+                            ? 'Browsing intentionally.'
+                            : 'Paused for now. Exact is back when you reload.'}
+                    </p>
                     <button
-                        className="group flex flex-col gap-3 rounded-md"
-                        aria-pressed={page === 'enabled'}
-                        aria-describedby="status-hint"
+                        className={`
+                            h-9 rounded-md px-3 text-sm transition-colors
+                            ${
+                                page === 'disabled'
+                                    ? 'bg-gray-900 text-gray-50 hover:bg-gray-900/90'
+                                    : 'bg-white text-gray-900 border border-gray-200 hover:bg-gray-50'
+                            }
+                        `}
                         onClick={() =>
                             setStatus(
                                 page === 'disabled' ? 'enabled' : 'disabled'
                             )
                         }
                     >
-                        <span
-                            className="preview w-full"
-                            data-status={page}
-                            aria-hidden
-                        />
-                        <span
-                            className={`
-                                h-9 flex items-center justify-center rounded-md px-3 text-sm transition-colors
-                                ${
-                                    page === 'enabled'
-                                        ? 'bg-gray-900 text-gray-50 group-hover:bg-gray-900/90'
-                                        : 'bg-white text-gray-900 border border-gray-200 group-hover:bg-gray-50'
-                                }
-                            `}
-                        >
-                            {page === 'enabled'
-                                ? 'Browsing intentionally'
-                                : 'Paused for now'}
-                        </span>
+                        {page === 'disabled' ? 'Enable' : 'Disable'}
                     </button>
-                    <p
-                        id="status-hint"
-                        className="text-xs text-gray-500 -mt-1.5"
-                    >
-                        {page === 'enabled'
-                            ? 'Click to pause on this page.'
-                            : 'Click to resume, or reload the page.'}
-                    </p>
                 </div>
             )}
         </div>
