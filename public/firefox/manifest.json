@@ -22,12 +22,8 @@
                 "*://*.youtube.com/*",
                 "*://*.x.com/*"
             ],
-            "js": [
-                "content/main.js"
-            ],
-            "css": [
-                "content/main.css"
-            ],
+            "js": ["content/main.js"],
+            "css": ["content/main.css"],
             "run_at": "document_start"
         }
     ],
