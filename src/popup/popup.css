@@ -12,6 +12,7 @@
     less dimming, since the popup's white background isn't a feed.
      */
     .preview {
+        display: block;
         height: 5rem;
         border-radius: 0.375rem;
         background: radial-gradient(

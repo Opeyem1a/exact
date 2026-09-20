@@ -41,29 +41,49 @@ const Popup = () => {
             )}
             {(page === 'enabled' || page === 'disabled') && (
                 <div className="flex flex-col gap-3">
-                    <div className="preview" data-status={page} aria-hidden />
+                    {/*
+                    The preview and the label are one control, so clicking
+                    either toggles and there's a single focus stop. The label
+                    carries the state and the hint below carries the action
+                     */}
                     <button
-                        className={`
-                            h-9 rounded-md px-3 text-sm transition-colors
-                            ${
-                                page === 'disabled'
-                                    ? 'bg-gray-900 text-gray-50 hover:bg-gray-900/90'
-                                    : 'bg-white text-gray-900 border border-gray-200 hover:bg-gray-50'
-                            }
-                        `}
+                        className="group flex flex-col gap-3 rounded-md"
+                        aria-pressed={page === 'enabled'}
+                        aria-describedby="status-hint"
                         onClick={() =>
                             setStatus(
                                 page === 'disabled' ? 'enabled' : 'disabled'
                             )
                         }
                     >
-                        {page === 'disabled' ? 'Enable' : 'Disable'}
+                        <span
+                            className="preview w-full"
+                            data-status={page}
+                            aria-hidden
+                        />
+                        <span
+                            className={`
+                                h-9 flex items-center justify-center rounded-md px-3 text-sm transition-colors
+                                ${
+                                    page === 'enabled'
+                                        ? 'bg-gray-900 text-gray-50 group-hover:bg-gray-900/90'
+                                        : 'bg-white text-gray-900 border border-gray-200 group-hover:bg-gray-50'
+                                }
+                            `}
+                        >
+                            {page === 'enabled'
+                                ? 'Browsing intentionally'
+                                : 'Paused for now'}
+                        </span>
                     </button>
-                    {page === 'disabled' && (
-                        <p className="text-xs text-gray-500 -mt-1.5">
-                            Off until you enable it or reload the page.
-                        </p>
-                    )}
+                    <p
+                        id="status-hint"
+                        className="text-xs text-gray-500 -mt-1.5"
+                    >
+                        {page === 'enabled'
+                            ? 'Click to pause on this page.'
+                            : 'Click to resume, or reload the page.'}
+                    </p>
                 </div>
             )}
         </div>
