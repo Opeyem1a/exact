@@ -9,7 +9,7 @@ description live here and are pasted into each store's own fields.
 ### Name
 
 ```
-Exact - Browse with intention
+Exact - Focus & Distraction Blocker
 ```
 
 ### Summary
